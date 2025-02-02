@@ -32,6 +32,15 @@ public interface EmployeeMapper {
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 
+    /*
+       根据主键去动态修改状态
+     */
 
+    void update(Employee employee); // 在EmployeeMapper.xml里可以被扫描到因为我们设置好了映射关系
 
+    /*
+      根据id查询员工信息
+     */
+    @Select("select * from employee where id = #{id}")
+    Employee getById(long id);
 }

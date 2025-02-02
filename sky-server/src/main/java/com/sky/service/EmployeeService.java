@@ -28,6 +28,21 @@ public interface EmployeeService {
       分页查询
      */
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /*
+      禁用或者允许员工账号
+     */
+    void startOrStop(Integer status, Long id);
+
+    /*
+      根据id查员工
+     */
+    Employee getById(long id);
+
+    /*
+      编辑员工信息
+     */
+    void update(EmployeeDTO employeeDTO);
 }
 
 
